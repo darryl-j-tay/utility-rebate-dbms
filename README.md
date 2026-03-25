@@ -29,11 +29,13 @@ Performance Reporting: Standardized metrics for Variance, SLA, and GRF reconcili
 🏗️ Core Functional Features
 
 1. Workflow-Driven Lifecycle
+
 The system tracks applications through a strict 8-stage progression:
 
 Potential Lead → Commitment Submitted → Commitment Approved → Rebate Submitted → Rebate Approved → Rebate Received → Closed/Deposited → Rejected.
 
 2. Financial & Energy Metric Tracking
+
 ERMS captures four critical dimensions of project success:
 
 Rebate Amount ($): Tracking from initial estimate to final check deposit.
@@ -45,6 +47,7 @@ Lifetime Savings (kWh): Total projected impact over asset life.
 Demand Savings (kW): Peak load reduction for grid stability.
 
 3. Advanced Data Governance
+
 XOR ID Constraints: Enforces a project is tracked in either E-Builder/UHM or Service Queue—never both.
 
 Immutability Locks: Financial fields are automatically locked upon reaching terminal stages to prevent retroactive data "cooking."
@@ -52,6 +55,7 @@ Immutability Locks: Financial fields are automatically locked upon reaching term
 Audit Trail: Standardized Date_Added, Added_By, Date_Modified, and Modified_By fields on every table.
 
 4. Collaborative Asset Mapping
+
 Junction Table Logic: Handles real-world complexity where one rebate check may cover multiple projects (SOPs), and one project may span multiple physical buildings.
 
 Document Repository: A centralized home for applications, invoices, and proof of deposits.
