@@ -1,9 +1,15 @@
 🚀 Enterprise Rebate Management System (ERMS)
+
 Data Model & Workflow Architecture for Institutional Energy Finance
+
 📌 Project Overview
+
 The Enterprise Rebate Management System (ERMS) is a high-integrity DBMS framework designed to synchronize physical University of Hawaii (UH) assets with utility rebate workflows. This system bridges the "Reconciliation Gap" between construction management, energy engineering, and final financial deposit.
+
 Unlike fragmented spreadsheets, ERMS provides a single source of truth for multi-year project lifecycles, ensuring that energy savings and financial incentives are tracked, validated, and audited with 100% accuracy.
+
 🛠️ The Seven Pillars of ERMS
+
 The system is built on a professional architecture to ensure data longevity and institutional memory:
 
 Requirements Traceability (RTM): The authoritative source for every business rule and stage gate.
@@ -21,6 +27,7 @@ Role-Based Governance: Tiered access control to protect sensitive financial and 
 Performance Reporting: Standardized metrics for Variance, SLA, and GRF reconciliation.
 
 🏗️ Core Functional Features
+
 1. Workflow-Driven Lifecycle
 The system tracks applications through a strict 8-stage progression:
 
@@ -50,6 +57,7 @@ Junction Table Logic: Handles real-world complexity where one rebate check may c
 Document Repository: A centralized home for applications, invoices, and proof of deposits.
 
 📂 Repository Structure
+
 /docs/requirements: The RTM (Requirements Traceability Matrix).
 
 /docs/data_model: The Data Dictionary (DD) and ERD.
