@@ -20,7 +20,7 @@ Relational Mapping (ERD): Complex 1:M and M:M logic linking payments, applicatio
 
 Application Logic (AL): A state-machine governing 8 stages of the rebate lifecycle.
 
-Integrity Constraints (IC): Technical enforcement of XOR logic (e.g., E-Builder vs. Service Queue).
+Integrity Constraints (IC): Technical enforcement of XOR logic (e.g., E-Builder vs. SQ).
 
 Role-Based Governance: Tiered access control to protect sensitive financial and audit fields.
 
