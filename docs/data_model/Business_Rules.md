@@ -9,12 +9,12 @@ The Energy Rebate Management System (ERMS) functions as a governance tool for st
 
 | Ref ID | Rule Name | Technical Logic | Enforcement | Rationale |
 |:---|:---|:---|:---|:---|
-| **BR-01** | **Record Identity** | PK; Update Restricted | Database (PK) | Ensures audit traceability across multi-year cycles. |
-| **BR-02** | **Project Linkage** | Foreign Key; NOT NULL | Database (FK) | Prevents orphaned records; enables campus-wide reporting. |
-| **BR-03** | **Utility Sync** | Immutable after submission | Database Trigger | Prevents reconciliation errors post-utility filing. |
-| **BR-04** | **Baseline Integrity**| NOT NULL @ Approval | Workflow Trigger | Prevents unauthorized modification of baseline estimates. |
-| **BR-05** | **Zero-Rebate Check** | Conditional Default (0.00)| Database Trigger | Prevents double-counting if third parties secure funds. |
-| **BR-06** | **System XOR** | XOR Constraint | Check Constraint | Prevents duplicate funding across E-Builder and SuperQuote. |
+| <a name="br-01"></a>**BR-01** | **Record Identity** | PK; Update Restricted | Database (PK) | Ensures audit traceability across multi-year cycles. |
+| <a name="br-02"></a>**BR-02** | **Project Linkage** | Foreign Key; NOT NULL | Database (FK) | Prevents orphaned records; enables campus-wide reporting. |
+| <a name="br-03"></a>**BR-03** | **Utility Sync** | Immutable after submission | Database Trigger | Prevents reconciliation errors post-utility filing. |
+| <a name="br-04"></a>**BR-04** | **Baseline Integrity**| NOT NULL @ Approval | Workflow Trigger | Prevents unauthorized modification of baseline estimates. |
+| <a name="br-05"></a>**BR-05** | **Zero-Rebate Check** | Conditional Default (0.00)| Database Trigger | Prevents double-counting if third parties secure funds. |
+| <a name="br-06"></a>**BR-06** | **System XOR** | XOR Constraint | Check Constraint | Prevents duplicate funding across E-Builder and SuperQuote. |
 
 ---
 
