@@ -1,69 +1,74 @@
-🚀 Enterprise Rebate Management System (ERMS)
+# Enterprise Rebate Management System (ERMS)
 
-Data Model & Workflow Architecture for Institutional Energy Finance
+## The Origin
+This started as a practical problem.
 
-📌 Project Overview
+Rebates were being tracked through emails, random folders, inconsistent file names, and whatever system a contractor or project manager happened to use. Things slipped through—missed rebates, incomplete applications, no clear audit trail, and no real way to see total impact.
 
-The Enterprise Rebate Management System (ERMS) is a high-integrity DBMS framework designed to synchronize physical University of Hawaii (UH) assets with utility rebate workflows. This system bridges the "Reconciliation Gap" between construction management, energy engineering, and final financial deposit.
+I took that over and built a structured spreadsheet and directory system to fix it. **That alone doubled the number of rebates captured at my campus.**
 
-Unlike fragmented spreadsheets, ERMS provides a single source of truth for multi-year project lifecycles, ensuring that energy savings and financial incentives are tracked, validated, and audited with 100% accuracy.
+This project is the next step: turning that working system into something more durable and scalable across the university system.
 
-🛠️ The Seven Pillars of ERMS
+---
 
-The system is built on a professional architecture to ensure data longevity and institutional memory:
+## The Problem
+The problem isn’t just messy data.
 
-Requirements Traceability (RTM): The authoritative source for every business rule and stage gate.
+Across campuses, project managers are focused on construction. Rebates are small relative to total project cost, and often no one owns the process end-to-end.
 
-Normalized Data Dictionary: Strict schema definitions (PKs/FKs) to prevent data duplication.
+So rebates—and the data behind them—simply disappear.
 
-Relational Mapping (ERD): Complex 1:M and M:M logic linking payments, applications, and buildings.
+Not because people don’t care, but because there’s no system designed to carry them from start to finish.
 
-Application Logic (AL): A state-machine governing 8 stages of the rebate lifecycle.
+---
 
-Integrity Constraints (IC): Technical enforcement of XOR logic (e.g., E-Builder vs. SQ).
+## What this is trying to do
+Connect the pieces of the rebate lifecycle into one flow:
 
-Role-Based Governance: Tiered access control to protect sensitive financial and audit fields.
+- Project Planning  
+- Rebate Commitments  
+- Application Submission  
+- Final Payment & Impact Recording  
 
-Performance Reporting: Standardized metrics for Variance, SLA, and GRF reconciliation.
+So nothing gets lost between “this might qualify” and “this actually delivered value.”
 
-🏗️ Core Functional Features
+---
 
-1. Workflow-Driven Lifecycle
+## More Than a Check
+When projects aren’t tracked properly, you lose visibility into long-term demand reduction and energy savings.
 
-The system tracks applications through a strict 8-stage progression:
+This system is meant to quantify that impact over a 10–20 year horizon—shifting the focus from a one-time check to long-term sustainability outcomes.
 
-Potential Lead → Commitment Submitted → Commitment Approved → Rebate Submitted → Rebate Approved → Rebate Received → Closed/Deposited → Rejected.
+---
 
-2. Financial & Energy Metric Tracking
+## How this repo is structured
+This repo is an attempt to formalize what is currently a manual system. It’s not a finished product; it’s a working structure for thinking through the problem:
 
-ERMS captures four critical dimensions of project success:
+- **[Data Dictionary](./docs/data_model/Data_Dictionary.md)** → how projects, measures, and IDs are defined.
+- **[Business Rules](./docs/data_model/Business_Rules.md)** → what the system should and shouldn’t allow.
+- **Governance Logic** → how data stays auditable over time.
 
-Rebate Amount ($): Tracking from initial estimate to final check deposit.
+---
 
-Energy Saved (kWh/Year): Annual efficiency gains.
+## Core ideas
+- Track the full lifecycle (not just payments)  
+- Treat rebates and savings like a pipeline (Identified → Committed → Verified)  
+- Build structure early to avoid cleanup later  
+- Reflect real-world complexity (multiple buildings, systems, IDs)  
 
-Lifetime Savings (kWh): Total projected impact over asset life.
+---
 
-Demand Savings (kW): Peak load reduction for grid stability.
+## Future state
+There are tools that can probably do 70–80% of this already.
 
-3. Advanced Data Governance
+But before choosing a tool, the process needs to be understood well enough to know what “good” looks like.
 
-XOR ID Constraints: Enforces a project is tracked in either E-Builder/UHM or Service Queue—never both.
+This project is an attempt to define that.
 
-Immutability Locks: Financial fields are automatically locked upon reaching terminal stages to prevent retroactive data "cooking."
+---
 
-Audit Trail: Standardized Date_Added, Added_By, Date_Modified, and Modified_By fields on every table.
+If you work in this space or see a better way to structure this, feel free to contribute.
 
-4. Collaborative Asset Mapping
+---
 
-Junction Table Logic: Handles real-world complexity where one rebate check may cover multiple projects (SOPs), and one project may span multiple physical buildings.
-
-Document Repository: A centralized home for applications, invoices, and proof of deposits.
-
-📂 Repository Structure
-
-/docs/requirements: The RTM (Requirements Traceability Matrix).
-
-/docs/data_model: The Data Dictionary (DD) and ERD.
-
-/docs/governance: Integrity Constraints (IC) and Application Logic (AL).
+**This didn’t start as a technical project. It started because things were disorganized and impact was getting lost. This is just an attempt to fix that in a way that lasts.**
